@@ -1,0 +1,202 @@
+{% from "_includes/forms" import autosuggestField %}
+
+<hr />
+<h3>Merchant Settings</h3>
+
+{{ autosuggestField({
+label: 'PSPID'|t('commerce'),
+id: 'clientId',
+class: 'ltr',
+name: 'clientId',
+suggestEnvVars: false,
+value: gateway.clientId,
+errors: gateway.getErrors('clientId'),
+required: true,
+instructions: 'Your affiliation name in the Barlcaycard ePDQ payment system.'
+}) }}
+
+{{ autosuggestField({
+label: 'SHA In Password'|t('commerce'),
+id: 'shaIn',
+class: 'ltr',
+name: 'shaIn',
+suggestEnvVars: false,
+value: gateway.shaIn,
+errors: gateway.getErrors('shaIn'),
+required: true,
+instructions: 'Your SHA in password as setup in your Barlcaycard ePDQ account.'
+}) }}
+
+{{ autosuggestField({
+label: 'Success URL'|t('commerce'),
+id: 'returnUrl',
+class: 'ltr',
+name: 'returnUrl',
+suggestEnvVars: false,
+value: gateway.returnUrl,
+errors: gateway.getErrors('returnUrl'),
+required: true,
+instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website after successful payment. Make sure you include the full URL including domain name.'
+}) }}
+
+{{ autosuggestField({
+label: 'Decline URL'|t('commerce'),
+id: 'declineUrl',
+class: 'ltr',
+name: 'declineUrl',
+suggestEnvVars: false,
+value: gateway.declineUrl,
+errors: gateway.getErrors('declineUrl'),
+required: true,
+instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website after unsuccessful payment. Make sure you include the full URL including domain name.'
+}) }}
+
+{{ autosuggestField({
+label: 'Exception URL'|t('commerce'),
+id: 'exceptionUrl',
+class: 'ltr',
+name: 'exceptionUrl',
+suggestEnvVars: false,
+value: gateway.exceptionUrl,
+errors: gateway.getErrors('exceptionUrl'),
+required: true,
+instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website if a payment error ocours. Make sure you include the full URL including domain name.'
+}) }}
+
+<hr />
+<h3>Mobile Page Layout Fields</h3>
+
+<p>As this payment gateway connects to the Barlcaycard ePDQ hosted payment page, layout customisations are under the control of the Barclaycard ePDQ system. You can read more about layout customisation by reading the Barlcaycard ePDQ ePDQ Integrate with ePDQ e-Commerce Guide <a href="https://support.epdq.co.uk/en/guides/integration%20guides/e-commerce/payment-page-look-and-feel" target="_blank">available here.</a></p>
+<p>The following settings are provided in support of section 6.4 of the above guide. The functionality of these settings is not guaranteed as their operation is outside of the control of this gateway plugin.</p>
+
+{{ autosuggestField({
+label: 'Page Title'|t('commerce'),
+id: 'pl_title',
+class: 'ltr',
+name: 'pl_title',
+suggestEnvVars: false,
+value: gateway.pl_title is empty ? 'Barclaycard ePDQ' : gateway.pl_title,
+errors: gateway.getErrors('pl_title'),
+required: true,
+instructions: 'Sets the page title of the browser window when the user reaches the off site Barclaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Page Font Family'|t('commerce'),
+id: 'pl_fonttype',
+class: 'ltr',
+name: 'pl_fonttype',
+suggestEnvVars: false,
+value: gateway.pl_fonttype is empty ? 'Verdana' : gateway.pl_fonttype,
+errors: gateway.getErrors('pl_fonttype'),
+required: true,
+instructions: 'Sets the font family on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Page Background Colour'|t('commerce'),
+id: 'pl_bgcolor',
+class: 'ltr',
+name: 'pl_bgcolor',
+suggestEnvVars: false,
+value: gateway.pl_bgcolor is empty ? '#FFFFFF' : gateway.pl_bgcolor,
+errors: gateway.getErrors('pl_bgcolor'),
+required: true,
+instructions: 'Sets the background color of the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Page Text Colour'|t('commerce'),
+id: 'pl_txtcolor',
+class: 'ltr',
+name: 'pl_txtcolor',
+suggestEnvVars: false,
+value: gateway.pl_txtcolor is empty ? '#00467F' : gateway.pl_txtcolor,
+errors: gateway.getErrors('pl_txtcolor'),
+required: true,
+instructions: 'Sets the text color of the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Background Colour For The Right Columns'|t('commerce'),
+id: 'pl_tblbgcolor',
+class: 'ltr',
+name: 'pl_tblbgcolor',
+suggestEnvVars: false,
+value: gateway.pl_tblbgcolor is empty ? '#E1EDF4' : gateway.pl_tblbgcolor,
+errors: gateway.getErrors('pl_tblbgcolor'),
+required: true,
+instructions: 'Sets the background colour of the right columns on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Text Colour For The Right Columns'|t('commerce'),
+id: 'pl_tbltxtcolor',
+class: 'ltr',
+name: 'pl_tbltxtcolor',
+suggestEnvVars: false,
+value: gateway.pl_tbltxtcolor is empty ? '#000000' : gateway.pl_tbltxtcolor,
+errors: gateway.getErrors('pl_tbltxtcolor'),
+required: true,
+instructions: 'Sets the text colour of the right columns on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Background Colour For The Left Columns'|t('commerce'),
+id: 'pl_hdtblbgcolor',
+class: 'ltr',
+name: 'pl_hdtblbgcolor',
+suggestEnvVars: false,
+value: gateway.pl_hdtblbgcolor is empty ? '#00467F' : gateway.pl_hdtblbgcolor,
+errors: gateway.getErrors('pl_hdtblbgcolor'),
+required: true,
+instructions: 'Sets the background colour of the left columns on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Text Colour For The Left Columns'|t('commerce'),
+id: 'pl_hdtbltxtcolor',
+class: 'ltr',
+name: 'pl_hdtbltxtcolor',
+suggestEnvVars: false,
+value: gateway.pl_hdtbltxtcolor is empty ? '#000000' : gateway.pl_hdtbltxtcolor,
+errors: gateway.getErrors('pl_hdtbltxtcolor'),
+required: true,
+instructions: 'Sets the text colour of the left columns on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Font Family For The Left Columns'|t('commerce'),
+id: 'pl_hdfonttype',
+class: 'ltr',
+name: 'pl_hdfonttype',
+suggestEnvVars: false,
+value: gateway.pl_hdfonttype is empty ? 'Verdana' : gateway.pl_hdfonttype,
+errors: gateway.getErrors('pl_hdfonttype'),
+required: true,
+instructions: 'Sets the font family of the left columns on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Text Colour For The Left Columns'|t('commerce'),
+id: 'pl_buttonbgcolor',
+class: 'ltr',
+name: 'pl_buttonbgcolor',
+suggestEnvVars: false,
+value: gateway.pl_buttonbgcolor is empty ? '#FFFFFF' : gateway.pl_buttonbgcolor,
+errors: gateway.getErrors('pl_buttonbgcolor'),
+required: true,
+instructions: 'Sets the button background colour on the off site Barlcaycard ePDQ payment page.'
+}) }}
+
+{{ autosuggestField({
+label: 'Text Colour For The Left Columns'|t('commerce'),
+id: 'pl_buttontxtcolor',
+class: 'ltr',
+name: 'pl_buttontxtcolor',
+suggestEnvVars: false,
+value: gateway.pl_buttontxtcolor is empty ? '#00467F' : gateway.pl_buttontxtcolor,
+errors: gateway.getErrors('pl_buttontxtcolor'),
+required: true,
+instructions: 'Sets the button text colour on the off site Barlcaycard ePDQ payment page.'
+}) }}

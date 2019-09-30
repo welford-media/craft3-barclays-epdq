@@ -1,0 +1,43 @@
+{
+    "name": "welfordmedia/barclaycard-epdq-gateway",
+    "description": "A Barclaycard ePDQ eCommerce payment gateway for use with Craft Commerce 2.",
+    "type": "craft-plugin",
+    "version": "1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "barclaycard epdq ecommerce gateway"
+    ],
+    "support": {
+        "docs": "https://welfordmedia.co.uk",
+        "issues": "https://welfordmedia.co.uk"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Welford Media",
+            "homepage": "https://welfordmedia.co.uk"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.1.5",
+        "craftcms/commerce": "^2.0|^3.0",
+        "craftcms/commerce-omnipay": "^2.0.0",
+        "omnipay/common": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+          "welfordmedia\\barclaysepdqgateway\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Barclaycard ePDQ eCommerce Gateway",
+        "handle": "barclaycard-epdq-gateway",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "welfordmedia\\barclaysepdqgateway\\BarclaysEpdqGateway"
+    }
+}
