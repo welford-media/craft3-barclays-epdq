@@ -32,7 +32,7 @@ This plugin provides the ability for Craft Commerce 2 to process payments using 
 
 ## Configuring Barclays ePDQ Gateway
 
-Before using this gateway, you must setup a new gateway within the Craft Commerce gateway settings. During configuration you will need to input your merchant details as specified on the settings page. Make sure you have these details to hand.
+Before using this gateway, you must set up a new gateway within the Craft Commerce gateway settings. During configuration, you will need to input your merchant details as specified on the settings page. Make sure you have these details to hand.
 
 ## Using Barclays ePDQ Gateway
 
