@@ -7,7 +7,7 @@ use craft\commerce\models\Transaction;
 use craft\commerce\omnipay\base\OffsiteGateway;
 use craft\helpers\UrlHelper;
 use Omnipay\Common\AbstractGateway;
-use welfordmedia\barclaysepdqgateway\omni\Gateway as BarlcaysGateway;
+use welfordmedia\barclaysepdqgateway\omni\Gateway as BarclaysGateway;
 use craft\commerce\base\RequestResponseInterface;
 use yii\base\NotSupportedException;
 
@@ -71,7 +71,7 @@ class Gateway extends OffsiteGateway {
 
     protected function createGateway(): AbstractGateway
     {
-        /** @var BarlcaysGateway $gateway */
+        /** @var BarclaysGateway $gateway */
         $gateway = static::createOmnipayGateway($this->getGatewayClassName());
         $gateway->setClientId($this->clientId);
         $gateway->setLanguage($this->language);
@@ -100,6 +100,6 @@ class Gateway extends OffsiteGateway {
 
     protected function getGatewayClassName()
     {
-        return '\\'.BarlcaysGateway::class;
+        return '\\'.BarclaysGateway::class;
     }
 }

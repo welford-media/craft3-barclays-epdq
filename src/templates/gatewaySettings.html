@@ -22,7 +22,7 @@ suggestEnvVars: false,
 value: gateway.clientId,
 errors: gateway.getErrors('clientId'),
 required: true,
-instructions: 'Your affiliation name in the Barlcaycard ePDQ payment system.'
+instructions: 'Your affiliation name in the Barclaycard ePDQ payment system.'
 }) }}
 
 {{ autosuggestField({
@@ -34,7 +34,7 @@ suggestEnvVars: false,
 value: gateway.shaIn,
 errors: gateway.getErrors('shaIn'),
 required: true,
-instructions: 'Your SHA in password as setup in your Barlcaycard ePDQ account.'
+instructions: 'Your SHA in password as set up in your Barclaycard ePDQ account.'
 }) }}
 
 <h3 class="error">IMPORTANT INFORMATION</h3>
@@ -52,7 +52,7 @@ instructions: 'Your SHA in password as setup in your Barlcaycard ePDQ account.'
 <hr />
 <h3>Mobile Page Layout Fields</h3>
 
-<p>As this payment gateway connects to the Barlcaycard ePDQ hosted payment page, layout customisations are under the control of the Barclaycard ePDQ system. You can read more about layout customisation by reading the Barlcaycard ePDQ ePDQ Integrate with ePDQ e-Commerce Guide <a href="https://support.epdq.co.uk/en/guides/integration%20guides/e-commerce/payment-page-look-and-feel" target="_blank">available here.</a></p>
+<p>As this payment gateway connects to the Barclaycard ePDQ hosted payment page, layout customisations are under the control of the Barclaycard ePDQ system. You can read more about layout customisation by reading the Barclaycard ePDQ Integrate with ePDQ e-Commerce Guide <a href="https://support.epdq.co.uk/en/guides/integration%20guides/e-commerce/payment-page-look-and-feel" target="_blank">available here.</a></p>
 <p>The following settings are provided in support of section 6.4 of the above guide. The functionality of these settings is not guaranteed as their operation is outside of the control of this gateway plugin.</p>
 
 {{ autosuggestField({
@@ -76,7 +76,7 @@ suggestEnvVars: false,
 value: gateway.pl_fonttype is empty ? 'Verdana' : gateway.pl_fonttype,
 errors: gateway.getErrors('pl_fonttype'),
 required: true,
-instructions: 'Sets the font family on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the font family on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -88,7 +88,7 @@ suggestEnvVars: false,
 value: gateway.pl_bgcolor is empty ? '#FFFFFF' : gateway.pl_bgcolor,
 errors: gateway.getErrors('pl_bgcolor'),
 required: true,
-instructions: 'Sets the background color of the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the background color of the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -100,7 +100,7 @@ suggestEnvVars: false,
 value: gateway.pl_txtcolor is empty ? '#00467F' : gateway.pl_txtcolor,
 errors: gateway.getErrors('pl_txtcolor'),
 required: true,
-instructions: 'Sets the text color of the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the text color of the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -112,7 +112,7 @@ suggestEnvVars: false,
 value: gateway.pl_tblbgcolor is empty ? '#E1EDF4' : gateway.pl_tblbgcolor,
 errors: gateway.getErrors('pl_tblbgcolor'),
 required: true,
-instructions: 'Sets the background colour of the right columns on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the background colour of the right columns on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -124,7 +124,7 @@ suggestEnvVars: false,
 value: gateway.pl_tbltxtcolor is empty ? '#000000' : gateway.pl_tbltxtcolor,
 errors: gateway.getErrors('pl_tbltxtcolor'),
 required: true,
-instructions: 'Sets the text colour of the right columns on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the text colour of the right columns on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -136,7 +136,7 @@ suggestEnvVars: false,
 value: gateway.pl_hdtblbgcolor is empty ? '#00467F' : gateway.pl_hdtblbgcolor,
 errors: gateway.getErrors('pl_hdtblbgcolor'),
 required: true,
-instructions: 'Sets the background colour of the left columns on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the background colour of the left columns on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -148,7 +148,7 @@ suggestEnvVars: false,
 value: gateway.pl_hdtbltxtcolor is empty ? '#000000' : gateway.pl_hdtbltxtcolor,
 errors: gateway.getErrors('pl_hdtbltxtcolor'),
 required: true,
-instructions: 'Sets the text colour of the left columns on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the text colour of the left columns on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -160,7 +160,7 @@ suggestEnvVars: false,
 value: gateway.pl_hdfonttype is empty ? 'Verdana' : gateway.pl_hdfonttype,
 errors: gateway.getErrors('pl_hdfonttype'),
 required: true,
-instructions: 'Sets the font family of the left columns on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the font family of the left columns on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -172,7 +172,7 @@ suggestEnvVars: false,
 value: gateway.pl_buttonbgcolor is empty ? '#FFFFFF' : gateway.pl_buttonbgcolor,
 errors: gateway.getErrors('pl_buttonbgcolor'),
 required: true,
-instructions: 'Sets the button background colour on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the button background colour on the off site Barclaycard ePDQ payment page.'
 }) }}
 
 {{ autosuggestField({
@@ -184,5 +184,5 @@ suggestEnvVars: false,
 value: gateway.pl_buttontxtcolor is empty ? '#00467F' : gateway.pl_buttontxtcolor,
 errors: gateway.getErrors('pl_buttontxtcolor'),
 required: true,
-instructions: 'Sets the button text colour on the off site Barlcaycard ePDQ payment page.'
+instructions: 'Sets the button text colour on the off site Barclaycard ePDQ payment page.'
 }) }}
