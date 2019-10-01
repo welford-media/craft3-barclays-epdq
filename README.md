@@ -36,7 +36,9 @@ Before using this gateway, you must set up a new gateway within the Craft Commer
 
 ## Using Barclays ePDQ Gateway
 
-Using the payment gateway is simple. The following checkout code is provided as an **example only**, your own integration will vary.
+Using the payment gateway is simple. The following checkout code is provided as an **example only** and represents the bare minimum that your form should include when submitting to the payment gateway.
+
+**Important:** This example assumes that you have already captured and stored the users billing information as per the Craft Commerce 2 documentation in a previous checkout step. You MUST capture the customers billing information for transactions to be processed successfully.
 
         <form method="POST">
             {{ csrfInput() }}
