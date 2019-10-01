@@ -132,7 +132,7 @@ class PurchaseRequest extends AbstractRequest
         $data['ACCEPTURL']      = $this->getReturnUrl();
         $data['CANCELURL']      = $this->getCancelUrl();
         $data['DECLINEURL']     = $this->getDeclineUrl();
-        $data['EXCEPTIONURL']   = $this->getExceptionUrl();
+        $data['EXCEPTIONURL']   = $this->getReturnUrl();
 
         $card = $this->getCard();
         if ($card) {

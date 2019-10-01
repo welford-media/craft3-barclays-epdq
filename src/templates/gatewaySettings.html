@@ -1,7 +1,17 @@
-{% from "_includes/forms" import autosuggestField %}
+{% from "_includes/forms" import autosuggestField, lightswitchField %}
 
 <hr />
 <h3>Merchant Settings</h3>
+
+<p>This section provides all of the required merchant settings that are common to all Barclaycard ePDQ accounts.</p>
+
+{{ lightswitchField({
+label: "Test Mode"|t('commerce'),
+id: 'testMode',
+name: 'testMode',
+on: gateway.testMode,
+errors: gateway.getErrors('testMode'),
+}) }}
 
 {{ autosuggestField({
 label: 'PSPID'|t('commerce'),
@@ -27,41 +37,17 @@ required: true,
 instructions: 'Your SHA in password as setup in your Barlcaycard ePDQ account.'
 }) }}
 
-{{ autosuggestField({
-label: 'Success URL'|t('commerce'),
-id: 'returnUrl',
-class: 'ltr',
-name: 'returnUrl',
-suggestEnvVars: false,
-value: gateway.returnUrl,
-errors: gateway.getErrors('returnUrl'),
-required: true,
-instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website after successful payment. Make sure you include the full URL including domain name.'
-}) }}
+<h3 class="error">IMPORTANT INFORMATION</h3>
+<p>Some of the documented Barclaycard ePDQ settings / form fields must be provided using front end HTML code, and others are restricted for operational reasons. Please read the following information to ensure that your integration is configured correcty.</p>
 
-{{ autosuggestField({
-label: 'Decline URL'|t('commerce'),
-id: 'declineUrl',
-class: 'ltr',
-name: 'declineUrl',
-suggestEnvVars: false,
-value: gateway.declineUrl,
-errors: gateway.getErrors('declineUrl'),
-required: true,
-instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website after unsuccessful payment. Make sure you include the full URL including domain name.'
-}) }}
+<ul class="bullets">
+    <li><span style="font-weight: bold;">Success URL</span> - This is the page that users will see after payment is authorised. Set this using the redirectInput() function as detailed within the Craft CMS documentation.</li>
+    <li><span style="font-weight: bold;">Decline URL</span> - Barclaycard ePDQ will not send declined cards directly back to your site. This option is not available for customisation.</li>
+    <li><span style="font-weight: bold;">Cancel URL</span> - This is the page that users will see if the cancel button is used, or if the payment status is returned as &quot;uncertain&quot;. This should be defined using a standard hidden HTML form field named cancelUrl, and provide an appropriate hashed return URL as per the Craft CMS documentation.</li>
+    <li><span style="font-weight: bold;">Exception URL</span> - This is determined by the plugin and will return users to the same URL as specified in the Cancel URL.</li>
+</ul>
 
-{{ autosuggestField({
-label: 'Exception URL'|t('commerce'),
-id: 'exceptionUrl',
-class: 'ltr',
-name: 'exceptionUrl',
-suggestEnvVars: false,
-value: gateway.exceptionUrl,
-errors: gateway.getErrors('exceptionUrl'),
-required: true,
-instructions: 'The URL which will be passed to Barlcaycard ePDQ which will be used when returning users to your website if a payment error ocours. Make sure you include the full URL including domain name.'
-}) }}
+<p>For more information about how these settings work, please see the form example within the provided plugin documentation, or contact the plugin developer.</p>
 
 <hr />
 <h3>Mobile Page Layout Fields</h3>

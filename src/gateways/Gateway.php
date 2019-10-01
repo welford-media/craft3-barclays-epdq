@@ -14,6 +14,7 @@ use yii\base\NotSupportedException;
 
 class Gateway extends OffsiteGateway {
 
+    public $testMode = false;
     public $clientId;
     public $language = 'en_US';
     public $returnUrl;
@@ -77,7 +78,8 @@ class Gateway extends OffsiteGateway {
         $gateway->setReturnUrl($this->returnUrl);
         $gateway->setDeclineUrl($this->declineUrl);
         $gateway->setCancelUrl($this->cancelUrl);
-        $gateway->setExceptionUrl($this->exceptionUrl);
+        $gateway->setTestMode($this->testMode);
+        $gateway->setCallbackMethod('GET');
         $gateway->setPageLayout([
             'pl_title' => $this->pl_title,
             'pl_bgcolor' => $this->pl_bgcolor,

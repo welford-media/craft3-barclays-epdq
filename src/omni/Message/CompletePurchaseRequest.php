@@ -2,6 +2,7 @@
 
 namespace welfordmedia\barclaysepdqgateway\omni\Message;
 
+use Exception;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class CompletePurchaseRequest extends PurchaseRequest
@@ -18,7 +19,7 @@ class CompletePurchaseRequest extends PurchaseRequest
             $ourSha = $this->calculateSha($this->cleanParameters($requestData), $this->getShaOut());
 
             if ($ourSha !== $barclaysSha) {
-                throw new InvalidResponseException("Hashes do not match, request is faulty or has been tampered with.");
+                throw new Exception("Hashes do not match, request is faulty or has been tampered with.");
             }
         }
 
@@ -31,7 +32,7 @@ class CompletePurchaseRequest extends PurchaseRequest
             $this->httpRequest->request->all() :
             $this->httpRequest->query->all();
         if (empty($data)) {
-            throw new InvalidResponseException(sprintf(
+            throw new Exception(sprintf(
                 "No callback data was passed in the %s request",
                 $this->getCallbackMethod()
             ));

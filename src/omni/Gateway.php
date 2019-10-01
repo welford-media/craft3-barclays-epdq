@@ -56,6 +56,16 @@ class Gateway extends AbstractGateway
         return $this->setParameter('callbackMethod', $value);
     }
 
+    public function getTestMode()
+    {
+        return $this->getParameter('testMode');
+    }
+
+    public function setTestMode($value)
+    {
+        return $this->setParameter('testMode', $value);
+    }
+
     public function getShaIn()
     {
         return $this->getParameter('shaIn');
@@ -137,6 +147,6 @@ class Gateway extends AbstractGateway
 
     public function getName()
     {
-        return "Barclays ePDQ";
+        return "Barclaycard ePDQ eCommerce Gateway";
     }
 }
