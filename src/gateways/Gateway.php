@@ -21,6 +21,7 @@ class Gateway extends OffsiteGateway {
     public $declineUrl;
     public $cancelUrl;
     public $exceptionUrl;
+    public $shaVersion;
     public $shaIn;
     public $shaOut;
     public $callbackMethod;
@@ -94,6 +95,7 @@ class Gateway extends OffsiteGateway {
             'pl_fonttype' => $this->pl_fonttype,
             //'pl_logo' => $this->pl_logo
         ]);
+        $gateway->setShaVersion($this->shaVersion);
         $gateway->setShaIn($this->shaIn);
         return $gateway;
     }
