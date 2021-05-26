@@ -66,6 +66,16 @@ class Gateway extends AbstractGateway
         return $this->setParameter('testMode', $value);
     }
 
+    public function getShaVerison()
+    {
+        return $this->getParameter('shaVersion');
+    }
+
+    public function setShaVersion($value)
+    {
+        return $this->setParameter('shaVersion', $value);
+    }
+
     public function getShaIn()
     {
         return $this->getParameter('shaIn');
