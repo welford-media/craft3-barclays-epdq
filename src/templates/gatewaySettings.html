@@ -1,4 +1,4 @@
-{% from "_includes/forms" import autosuggestField, lightswitchField %}
+{% from "_includes/forms" import autosuggestField, lightswitchField, selectField %}
 
 <hr />
 <h3>Merchant Settings</h3>
@@ -23,6 +23,21 @@ value: gateway.clientId,
 errors: gateway.getErrors('clientId'),
 required: true,
 instructions: 'Your affiliation name in the Barclaycard ePDQ payment system.'
+}) }}
+
+{{ selectField({
+label: "SHA Version"|t('commerce'),
+id: 'shaVersion',
+name: 'shaVersion',
+on: gateway.shaVersion,
+value: gateway.shaVersion,
+required: true,
+options: [
+{label: 'SHA-1'|t('app'), value: 'sha1'},
+{label: 'SHA-256'|t('app'), value: 'sha256'},
+{label: 'SHA-512'|t('app'), value: 'sha512'},
+],
+instructions: 'Your SHA version can be found within the Barclaycard Control Panel &rarr; Configuration &rarr; Technical Information &rarr; Global Security Parameters.'
 }) }}
 
 {{ autosuggestField({

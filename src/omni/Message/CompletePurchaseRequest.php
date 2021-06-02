@@ -16,7 +16,7 @@ class CompletePurchaseRequest extends PurchaseRequest
             $barclaysSha = (string)$requestData['SHASIGN'];
             unset($requestData['SHASIGN']);
 
-            $ourSha = $this->calculateSha($this->cleanParameters($requestData), $this->getShaOut());
+            $ourSha = $this->calculateSha($this->cleanParameters($requestData), $this->getShaOut(), $this->getShaVersion());
 
             if ($ourSha !== $barclaysSha) {
                 throw new Exception("Hashes do not match, request is faulty or has been tampered with.");

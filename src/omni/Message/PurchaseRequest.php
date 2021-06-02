@@ -54,7 +54,6 @@ class PurchaseRequest extends AbstractRequest
         return $this->setParameter('cancelUrl', substr($value, 0, 200));
     }
 
-
     public function getExceptionUrl()
     {
         return $this->getParameter('exceptionUrl');
@@ -93,6 +92,16 @@ class PurchaseRequest extends AbstractRequest
     public function setShaOut($value)
     {
         return $this->setParameter('shaOut', $value);
+    }
+
+    public function getShaVersion()
+    {
+        return $this->getParameter('shaVersion');
+    }
+
+    public function setShaVersion($value)
+    {
+        return $this->setParameter('shaVersion', $value);
     }
 
     public function getCallbackMethod()
@@ -164,9 +173,8 @@ class PurchaseRequest extends AbstractRequest
         }
 
         $data = $this->cleanParameters($data);
-
         if ($this->getShaIn()) {
-            $data['SHASIGN'] = $this->calculateSha($data, $this->getShaIn());
+            $data['SHASIGN'] = $this->calculateSha($data, $this->getShaIn(), $this->getShaVersion());
         }
 
         return $data;
@@ -174,7 +182,7 @@ class PurchaseRequest extends AbstractRequest
 
     protected function cleanParameters($data)
     {
-        $clean = array();
+        $clean = [];
         foreach ($data as $key => $value) {
             if (!is_null($value) && $value !== false && $value !== '') {
                 $clean[strtoupper($key)] = $value;
@@ -184,7 +192,7 @@ class PurchaseRequest extends AbstractRequest
         return $clean;
     }
 
-    public function calculateSha($data, $shaKey)
+    public function calculateSha($data, $shaKey, $shaVersion)
     {
         ksort($data);
         $shaString = '';
@@ -192,7 +200,17 @@ class PurchaseRequest extends AbstractRequest
             $shaString .= sprintf('%s=%s%s', strtoupper($key), $value, $shaKey);
         }
 
-        return strtoupper(sha1($shaString));
+        switch ($shaVersion) {
+            case 'sha512':
+            case 'sha256':
+                $shaString = hash($shaVersion, $shaString);
+                break;
+            default:
+                $shaString = sha1($shaString);
+                break;
+        }
+
+        return strtoupper($shaString);
     }
 
     public function sendData($data)
