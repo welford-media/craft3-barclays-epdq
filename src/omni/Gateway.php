@@ -2,15 +2,18 @@
 
 namespace welfordmedia\barclaysepdqgateway\omni;
 
+use JetBrains\PhpStorm\ArrayShape;
 use Omnipay\Common\Http\ClientInterface;
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Common\Message\AbstractRequest;
+use Omnipay\Common\Message\RequestInterface;
 use welfordmedia\barclaysepdqgateway\omni\Message\CompletePurchaseRequest;
 use welfordmedia\barclaysepdqgateway\omni\Message\PurchaseRequest;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 class Gateway extends AbstractGateway
 {
-    public function getDefaultParameters()
+    #[ArrayShape(['clientId' => "string", 'testMode' => "false", 'language' => "string", 'callbackMethod' => "string"])] public function getDefaultParameters()
     {
         return array(
             'clientId' => '',
@@ -20,7 +23,7 @@ class Gateway extends AbstractGateway
         );
     }
 
-    public function purchase(array $parameters = array())
+    public function purchase(array $parameters = array()): RequestInterface|AbstractRequest
     {
         return $this->createRequest(
             '\welfordmedia\barclaysepdqgateway\omni\Message\PurchaseRequest',
@@ -28,7 +31,7 @@ class Gateway extends AbstractGateway
         );
     }
 
-    public function completePurchase(array $parameters = array())
+    public function completePurchase(array $parameters = array()): RequestInterface|AbstractRequest
     {
         return $this->createRequest(
             '\welfordmedia\barclaysepdqgateway\omni\Message\CompletePurchaseRequest',

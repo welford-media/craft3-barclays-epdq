@@ -6,6 +6,7 @@ use craft\commerce\models\payments\BasePaymentForm;
 use craft\commerce\models\Transaction;
 use craft\commerce\omnipay\base\OffsiteGateway;
 use craft\helpers\UrlHelper;
+use JetBrains\PhpStorm\ArrayShape;
 use Omnipay\Common\AbstractGateway;
 use welfordmedia\barclaysepdqgateway\omni\Gateway as BarclaysGateway;
 use craft\commerce\base\RequestResponseInterface;
@@ -53,17 +54,21 @@ class Gateway extends OffsiteGateway {
         return $this->performRequest($completeRequest, $transaction);
     }
 
+    public function refund(Transaction $transaction): RequestResponseInterface {
+        throw new NotSupportedException(Craft::t('commerce', 'Refunding is not supported by this gateway'));
+    }
+
     public function supportsWebhooks(): bool
     {
         return false;
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): null|string
     {
         return Craft::$app->getView()->renderTemplate('barclaycard-epdq-gateway/gatewaySettings', ['gateway' => $this]);
     }
 
-    public function getPaymentTypeOptions(): array
+    #[ArrayShape(['purchase' => "string"])] public function getPaymentTypeOptions(): array
     {
         return [
             'purchase' => Craft::t('commerce', 'Purchase (Authorize and Capture Immediately)')
@@ -100,7 +105,7 @@ class Gateway extends OffsiteGateway {
         return $gateway;
     }
 
-    protected function getGatewayClassName()
+    protected function getGatewayClassName(): ?string
     {
         return '\\'.BarclaysGateway::class;
     }

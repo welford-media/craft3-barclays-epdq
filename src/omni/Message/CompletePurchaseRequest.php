@@ -26,7 +26,7 @@ class CompletePurchaseRequest extends PurchaseRequest
         return $requestData;
     }
 
-    public function getRequestData()
+    public function getRequestData(): array
     {
         $data = ($this->getCallbackMethod() == 'POST') ?
             $this->httpRequest->request->all() :
@@ -41,7 +41,7 @@ class CompletePurchaseRequest extends PurchaseRequest
     }
 
 
-    public function sendData($data)
+    public function sendData($data): CompletePurchaseResponse
     {
         return $this->response = new CompletePurchaseResponse($this, $data);
     }

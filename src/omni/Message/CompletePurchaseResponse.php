@@ -51,7 +51,7 @@ class CompletePurchaseResponse extends AbstractResponse
         99 => "Being processed (intermediate technical status)"
     );
 
-    public function isSuccessful()
+    public function isSuccessful(): bool
     {
         $successCodes = array(5, 9);
 
@@ -63,7 +63,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return int|null
      */
-    public function getStatusCode()
+    public function getStatusCode(): ?int
     {
         return isset($this->data['STATUS']) ? (int)$this->data['STATUS'] : null;
     }
@@ -76,7 +76,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getTransactionReference()
+    public function getTransactionReference(): ?string
     {
         return isset($this->data['PAYID']) ? $this->data['PAYID'] : null;
     }
@@ -101,7 +101,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getTransactionId()
+    public function getTransactionId(): ?string
     {
         return isset($this->data['orderID']) ? $this->data['orderID'] : null;
     }
@@ -111,7 +111,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getNcError()
+    public function getNcError(): ?string
     {
         return isset($this->data['NCERROR']) ? $this->data['NCERROR'] : null;
     }
@@ -121,7 +121,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getNcErrorPlus()
+    public function getNcErrorPlus(): ?string
     {
         return isset($this->data['NCERRORPLUS']) ? $this->data['NCERRORPLUS'] : null;
     }
@@ -131,7 +131,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getNcStatus()
+    public function getNcStatus(): ?string
     {
         return isset($this->data['NCSTATUS']) ? $this->data['NCSTATUS'] : null;
     }
@@ -145,7 +145,7 @@ class CompletePurchaseResponse extends AbstractResponse
      * @return string|null
      */
 
-    public function getAcceptance()
+    public function getAcceptance(): ?string
     {
         return isset($this->data['ACCEPTANCE']) ? $this->data['ACCEPTANCE'] : null;
     }
@@ -155,7 +155,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return isset($this->data['currency']) ? $this->data['currency'] : null;
     }
@@ -165,7 +165,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return float|null
      */
-    public function getAmount()
+    public function getAmount(): ?float
     {
         return isset($this->data['amount']) ? $this->data['amount'] : null;
     }
@@ -175,7 +175,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getPaymentMethod()
+    public function getPaymentMethod(): ?string
     {
         return isset($this->data['PM']) ? $this->data['PM'] : null;
     }
@@ -211,7 +211,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCardNumber()
+    public function getCardNumber(): ?string
     {
         return isset($this->data['CARDNO']) ? $this->data['CARDNO'] : null;
     }
@@ -221,7 +221,7 @@ class CompletePurchaseResponse extends AbstractResponse
      * When there is no expiry date available (e.g. for bank transfers) the value 9999 is used.
      * @return string|null
      */
-    public function getExpiryDate()
+    public function getExpiryDate(): ?string
     {
         return isset($this->data['ED']) ? $this->data['ED'] : null;
     }
@@ -231,7 +231,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCardHolder()
+    public function getCardHolder(): ?string
     {
         return isset($this->data['CN']) ? $this->data['CN'] : null;
     }
@@ -241,7 +241,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getTransactionDate()
+    public function getTransactionDate(): ?string
     {
         return isset($this->data['TRXDATE']) ? $this->data['TRXDATE'] : null;
     }
@@ -251,7 +251,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCardBrand()
+    public function getCardBrand(): ?string
     {
         return isset($this->data['BRAND']) ? $this->data['BRAND'] : null;
     }
@@ -271,7 +271,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getIPCountry()
+    public function getIPCountry(): ?string
     {
         return isset($this->data['IPCTY']) ? $this->data['IPCTY'] : null;
     }
@@ -286,7 +286,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCardCountry()
+    public function getCardCountry(): ?string
     {
         return isset($this->data['CCCTY']) ? $this->data['CCCTY'] : null;
     }
@@ -343,7 +343,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return integer|null
      */
-    public function getECI()
+    public function getECI(): ?int
     {
         return isset($this->data['ECI']) ? $this->data['ECI'] : null;
     }
@@ -361,7 +361,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getCVCCheck()
+    public function getCVCCheck(): ?string
     {
         return isset($this->data['CVCCheck']) ? $this->data['CVCCheck'] : null;
     }
@@ -380,7 +380,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getAAVCheck()
+    public function getAAVCheck(): ?string
     {
         return isset($this->data['AAVCheck']) ? $this->data['AAVCheck'] : null;
     }
@@ -391,7 +391,7 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getVirtualCard()
+    public function getVirtualCard(): ?string
     {
         return isset($this->data['VC']) ? $this->data['VC'] : null;
     }
@@ -401,12 +401,12 @@ class CompletePurchaseResponse extends AbstractResponse
      *
      * @return string|null
      */
-    public function getIPAddress()
+    public function getIPAddress(): ?string
     {
         return isset($this->data['IP']) ? $this->data['IP'] : null;
     }
 
-    public function getMessage()
+    public function getMessage(): ?string
     {
         if (isset($this->statusArray[$this->getStatusCode()])) {
             return $this->statusArray[$this->getStatusCode()];

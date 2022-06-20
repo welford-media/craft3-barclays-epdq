@@ -180,7 +180,7 @@ class PurchaseRequest extends AbstractRequest
         return $data;
     }
 
-    protected function cleanParameters($data)
+    protected function cleanParameters($data): array
     {
         $clean = [];
         foreach ($data as $key => $value) {
@@ -192,7 +192,7 @@ class PurchaseRequest extends AbstractRequest
         return $clean;
     }
 
-    public function calculateSha($data, $shaKey, $shaVersion)
+    public function calculateSha($data, $shaKey, $shaVersion): string
     {
         ksort($data);
         $shaString = '';
@@ -213,12 +213,12 @@ class PurchaseRequest extends AbstractRequest
         return strtoupper($shaString);
     }
 
-    public function sendData($data)
+    public function sendData($data): PurchaseResponse
     {
         return $this->response = new PurchaseResponse($this, $data);
     }
 
-    public function getEndpoint()
+    public function getEndpoint(): string
     {
         return $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
     }

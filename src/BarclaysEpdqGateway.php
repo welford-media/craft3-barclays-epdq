@@ -1,10 +1,10 @@
 <?php
 /**
- * Barclaycard ePDQ eCommerce Gateway plugin for Craft Commerce 2.x
+ * Barclaycard ePDQ eCommerce Gateway plugin for Craft Commerce 4.x
  *
  *
  * @link      https://welfordmedia.co.uk
- * @copyright Copyright (c) 2019 Welford Media
+ * @copyright Copyright (c) 2022 Welford Media
  */
 
 namespace welfordmedia\barclaysepdqgateway;
@@ -43,7 +43,7 @@ class BarclaysEpdqGateway extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1';
+    public string $schemaVersion = '1';
 
     // Public Methods
     // =========================================================================

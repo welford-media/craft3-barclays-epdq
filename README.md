@@ -1,12 +1,12 @@
-# Barclaycard ePDQ eCommerce Payment Gateway Plugin for Craft Commerce 2
+# Barclaycard ePDQ eCommerce Payment Gateway Plugin for Craft CMS and Commerce 4
 
-This plugin provides the ability for Craft Commerce 2 to process payments using the Barclaycard ePDQ e-Commerce payment solution.
+This plugin provides the ability for Craft Commerce 4 to process payments using the Barclaycard ePDQ e-Commerce payment solution.
 
 **This plugin does not support Barclaycard ePDQ DirectLink at this time. Support for this payment method is not planned.** 
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1 or later and Craft Commerce 2.0 or above.
+This plugin requires Craft CMS 4 or later and Craft Commerce 4 or above.
 
 ## Installation
 
@@ -26,7 +26,7 @@ To install the plugin using the command line, follow these instructions.
 
 ## Barclays ePDQ Gateway Overview
 
-This plugin provides the ability for Craft Commerce 2 to process payments using the Barclaycard ePDQ e-Commerce payment solution.
+This plugin provides the ability for Craft Commerce 4 to process payments using the Barclaycard ePDQ e-Commerce payment solution.
 
 **This plugin does not support Barclaycard ePDQ DirectLink at this time. Support for this payment method is not planned.**
 
