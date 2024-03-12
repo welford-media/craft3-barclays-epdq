@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 class Gateway extends AbstractGateway
 {
-    #[ArrayShape(['clientId' => "string", 'testMode' => "false", 'language' => "string", 'callbackMethod' => "string"])] public function getDefaultParameters()
+    public function getDefaultParameters()
     {
         return array(
             'clientId' => '',
