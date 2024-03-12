@@ -213,7 +213,7 @@ class PurchaseRequest extends AbstractRequest
         return strtoupper($shaString);
     }
 
-    public function sendData($data): PurchaseResponse
+    public function sendData($data)
     {
         return $this->response = new PurchaseResponse($this, $data);
     }

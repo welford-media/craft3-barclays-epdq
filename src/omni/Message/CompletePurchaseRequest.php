@@ -41,7 +41,7 @@ class CompletePurchaseRequest extends PurchaseRequest
     }
 
 
-    public function sendData($data): CompletePurchaseResponse
+    public function sendData($data)
     {
         return $this->response = new CompletePurchaseResponse($this, $data);
     }
