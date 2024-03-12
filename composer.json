@@ -1,55 +1,55 @@
 {
-    "name": "welfordmedia/barclaycard-epdq-gateway",
-    "description": "A Barclaycard ePDQ eCommerce payment gateway for use with Craft CMS and Craft Commerce 4.",
-    "type": "craft-plugin",
-    "version": "2.0.0",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "barclaycard epdq ecommerce gateway"
-    ],
-    "support": {
-        "docs": "https://welfordmedia.co.uk",
-        "issues": "https://welfordmedia.co.uk"
+  "name": "welfordmedia/barclaycard-epdq-gateway",
+  "description": "A Barclaycard ePDQ eCommerce payment gateway for use with Craft CMS and Craft Commerce 4.",
+  "type": "craft-plugin",
+  "version": "2.0.1",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "barclaycard epdq ecommerce gateway"
+  ],
+  "support": {
+    "docs": "https://welfordmedia.co.uk",
+    "issues": "https://welfordmedia.co.uk"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Welford Media",
+      "homepage": "https://welfordmedia.co.uk"
+    }
+  ],
+  "require": {
+    "php": "^8.0.2",
+    "craftcms/cms": "^4.0.0",
+    "craftcms/commerce": "^4.0.0",
+    "craftcms/commerce-omnipay": "^4.0.0",
+    "omnipay/common": "^3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "welfordmedia\\barclaysepdqgateway\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Barclaycard ePDQ eCommerce Gateway",
+    "handle": "barclaycard-epdq-gateway",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "changelogUrl": "???",
+    "class": "welfordmedia\\barclaysepdqgateway\\BarclaysEpdqGateway"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
     },
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Welford Media",
-            "homepage": "https://welfordmedia.co.uk"
-        }
-    ],
-    "require": {
-        "php": "^8.0.2",
-        "craftcms/cms": "^4.0.0",
-        "craftcms/commerce": "^4.0.0",
-        "craftcms/commerce-omnipay": "^4.0.0",
-        "omnipay/common": "^3.2"
-    },
-    "autoload": {
-        "psr-4": {
-          "welfordmedia\\barclaysepdqgateway\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "Barclaycard ePDQ eCommerce Gateway",
-        "handle": "barclaycard-epdq-gateway",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "???",
-        "class": "welfordmedia\\barclaysepdqgateway\\BarclaysEpdqGateway"
-    },
-    "config": {
-        "allow-plugins": {
-            "yiisoft/yii2-composer": true,
-            "craftcms/plugin-installer": true
-        },
-        "platform": {
-            "php": "8.0.2"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "platform": {
+      "php": "8.0.2"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
