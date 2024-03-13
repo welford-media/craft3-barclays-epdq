@@ -1,6 +1,6 @@
 {
   "name": "welfordmedia/barclaycard-epdq-gateway",
-  "description": "A Barclaycard ePDQ eCommerce payment gateway for use with Craft CMS and Craft Commerce 4.",
+  "description": "A Barclaycard ePDQ eCommerce payment gateway for use with Craft CMS and Craft Commerce 4 and above.",
   "type": "craft-plugin",
   "version": "3.0.0",
   "keywords": [
