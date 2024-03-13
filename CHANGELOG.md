@@ -1,5 +1,11 @@
 # Barclaycard ePDQ eCommerce Gateway Changelog
 
+## 3.0.0 - 2024-03-13
+
+### Added
+
+- Commerce 5.0 beta support
+
 ## 2.0.1 - 2024-03-12
 
 ### Changes
